@@ -1,0 +1,109 @@
+/*****************************
+#f4f0eC   白
+
+#a3cd39   青绿
+#0b4917   深绿
+
+#fbb044	  黄
+#140b05   近黑
+
+#04c8e2   浅蓝
+#06393c   深蓝
+
+#f05d4a   珊瑚红
+#413736   黑
+*******************************/
+
+
+
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.wrap {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	background: #a3cd39;
+	color: #0b4917;
+	text-align: center;
+}
+
+header {
+	background: #a3cd39;
+	box-shadow: 0 .5em 1em #111;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 900;
+	width: 100%;
+}
+
+header label {
+	color: #0b4917;
+	cursor: pointer;
+	display: inline-block;
+	line-height: 4.25em;
+	font-size: .667em;
+	font-weight: bold;
+	padding: 0 1em;
+}
+
+header label:hover {
+	background: #2e353b;
+}
+
+.slide {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 100%;
+	z-index: 10;
+	padding: 8em 1em 0;
+	transition: left 0s .75s;
+}
+
+.slide-one {
+	background: #a3cd39;
+	color: #0b4917;
+}
+
+.slide-two {
+	background: #fbb044;
+	color: #140b05;
+}
+
+.slide-three {
+	background: #04c8e2;
+	color: #06393c;
+}
+
+.slide-four {
+	background: #f05d4a;
+	color: #413736;
+}
+
+[id^="slide"]:checked  +  .slide {     /*attribute selector to select any input that has an ID that starts with slide*/
+	left: 0;
+	z-index: 100;
+	transition: left .65s ease-out;
+}
+
+.slide h1 {
+	opacity: 0;
+	transform: translateY(100%);
+	transition: transform .5s .5s, opacity .5s;
+}
+
+[id^="slide"]:checked + .slide h1 {
+	opacity: 1;
+	transform: translateY(0);
+	transition: all .5s .5s;
+}
